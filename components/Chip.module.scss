@@ -1,0 +1,41 @@
+@use "../styles/colors" as *;
+
+.chip {
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid;
+    transition: all 0.2s;
+
+    &[data-clickable="true"] {
+        cursor: pointer;
+    }
+}
+
+.chip[data-variant="primary"] {
+    border-color: $color-primary;
+    background-color: $color-primary;
+    color: $color-secondary;
+
+    &[data-clickable="true"]:hover {
+        border-color: $color-secondary;
+    }
+}
+
+.chip[data-variant="secondary"] {
+    background-color: $color-secondary;
+    border-color: $color-secondary;
+    color: $color-primary;
+
+    &[data-clickable="true"]:hover {
+        border-color: $color-primary;
+    }
+}
+
+.chip[data-variant="outline"] {
+    border-color: $color-primary;
+    color: $color-primary;
+
+    &[data-clickable="true"]:hover {
+        background: $color-secondary-light;
+    }
+}
